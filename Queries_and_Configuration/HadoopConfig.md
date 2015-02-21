@@ -8,6 +8,7 @@ On both the nodes, do the following:
 
 2. Permanently disabling SELinux so that on system reboot it does not restart is strongly recommended. To do this, edit the SELinux config and set SELINUX to disabled. On each host:
 *vi /etc/selinux/config*
+
 *SELINUX=disabled*
 
 3. Disable iptables
@@ -25,10 +26,18 @@ Set *enabled=0*
 
 8. .bashrc:
 *export JAVA_HOME=$HOME/java/jdk1.7.0_71*
+
 *export PATH=$JAVA_HOME/bin:$PATH*
 
+*export HADOOP_HOME=/root/hadoop/hadoop-1.2.1*
+
+*export HADOOP_PREFIX=/root/hadoop/hadoop-1.2.1*
+
+
 9. Do *vi conf/hadoop-env.sh:*
+
 Add:
+
 *export JAVA_HOME=$HOME/java/jdk1.7.0_71*
 
 10. Next gedit conf/core-site.xml:
